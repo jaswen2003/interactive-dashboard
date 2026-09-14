@@ -10,7 +10,7 @@
         <!-- Link external CSS -->
         <link rel="stylesheet" href="css/style.css">
         <!-- Source external JavaScript-->
-        <script src='js/script.js' defer></script>
+        <!-- Remove external JavaScript -->
     </head>
     <body>
         <h1>My Interactive Dashboard</h1>
@@ -25,6 +25,29 @@
         <div class="container">
             <div class="row">
                 <!-- Dashboard Content -->
+                 <div class="col" id="weekly-tasks">
+                    <!-- Insert script for task form -->
+                    <script src="js/task-manager.js" defer></script>
+                    <!-- Create task form -->
+                    <form>
+                        <!-- Name input field -->
+                        Name:
+                        <input type="text" id="name">
+                        <!-- Dialy Task Goal input field with "daily" id -->
+                        Daily Task Goal:
+                        <input type="number" id="daily">
+                        <!-- Weekly Bonus Goal input field with "bonus" id -->
+                        Weekly Bonus Goal:
+                        <input type="number" id="bonus">
+                        
+                        <div>
+                        <!-- Button element with 'goal-btn' id -->
+                        <button id="goal-btn">Submit</button>
+                        </div>
+                    </form>
+                    <!-- Paragraph element for function output with "goal-message" id -->
+                    <p id="goal-message"></p>
+                 </div>
             </div>
         </div>
     </body>
