@@ -33,7 +33,7 @@
                         <!-- Name input field -->
                         Name:
                         <input type="text" id="name">
-                        <!-- Dialy Task Goal input field with "daily" id -->
+                        <!-- Daily Task Goal input field with "daily" id -->
                         Daily Task Goal:
                         <input type="number" id="daily">
                         <!-- Weekly Bonus Goal input field with "bonus" id -->
@@ -47,6 +47,34 @@
                     </form>
                     <!-- Paragraph element for function output with "goal-message" id -->
                     <p id="goal-message"></p>
+                 </div>
+                 <div class="col" id="metric-converter">
+                    <!-- Insert script for converter -->
+                    <script src="js/metric-converter.js" defer></script>
+                    <!-- Create conversion form -->
+                    <form>
+                        <!-- Input for numeric value to be converted -->
+                        Value:
+                        <input type="number" id="value">
+                        <!-- Selection list for conversion type -->
+                        Conversion Type:
+                        <select id="type">
+                            <option value="in to cm">Inches to Centimeters</option>
+                            <option value="ft to cm">Feet to Centimeters</option>
+                            <option value="yd to m">Yards to Meters</option>
+                            <option value="mi to km">Miles to Kilometers</option>
+                            <option value="cm to in">Centimeters to Inches</option>
+                            <option value="cm to ft">Centimeters to Feet</option>
+                            <option value="m to yd">Meters to Yards</option>
+                            <option value="km to mi">Kilometers to Miles</option>
+                        </select>
+                        <!-- Button element for conversion -->
+                        <div>
+                            <button id="convert-btn">Convert</button>
+                        </div>
+                    </form>
+                    <!-- Paragraph element for function output -->
+                    <p id="conversion"></p>
                  </div>
             </div>
         </div>
