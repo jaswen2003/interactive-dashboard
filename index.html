@@ -14,20 +14,23 @@
     </head>
     <body>
         <h1>My Interactive Dashboard</h1>
-        <p>This dashboard was created by Jason Wendel for the WEB-115 course at Wake Tech</p>
+        <p class="centered">This dashboard was created by Jason Wendel for the WEB-115 course at Wake Tech</p>
         <script>
-            document.write('This dashboard demonstrates how JavaScript can be used to create interactive websites.')
+            document.write('<p class="centered">This dashboard demonstrates how JavaScript can be used to create interactive websites.</p>')
         </script>
         <!-- The <noscript> is for web browsers with JavaScript rendering disabled. -->
         <noscript>
             Unfortunately, your web browser does not support JavaScript.
         </noscript>
+        <br>
+        <br>
         <div class="container">
             <div class="row">
                 <!-- Dashboard Content -->
                  <div class="col" id="weekly-tasks">
                     <!-- Insert script for task form -->
                     <script src="js/task-manager.js" defer></script>
+                    <h2 class="heading">Weekly Goal Calculator</h2>
                     <!-- Create task form -->
                     <form>
                         <!-- Name input field -->
@@ -51,6 +54,7 @@
                  <div class="col" id="metric-converter">
                     <!-- Insert script for converter -->
                     <script src="js/metric-converter.js" defer></script>
+                    <h2 class="heading">Metric Conversion Tool</h2>
                     <!-- Create conversion form -->
                     <form>
                         <!-- Input for numeric value to be converted -->
@@ -76,6 +80,27 @@
                     <!-- Paragraph element for function output -->
                     <p id="conversion"></p>
                  </div>
+                 <div class="col" id="magic-eight-ball">
+                    <script src="js/magic-eight-ball.js" defer></script>﻿
+                    <link rel="stylesheet" href="css/magic-eight-ball.css">
+                    <h2 class="heading">Magic Eight Ball</h2>
+                        <form>
+                            <p>Type a yes/no question below, then click on the Eight Ball below to get your answer!</p>
+                            <input id="question" name="question" size="80">
+                            <div id="magicEightBall">
+                                <div id="circle"></div>
+                                <img id="ball" src="img/magic-eight-ball.png"/>
+                            </div>
+                            <button id="reset" name="reset" type="reset">Ask another question</button>
+                            <br>
+                            <br>
+                            <br>
+                            <p>Type a new response you wish to be added below, then click button to add response!</p>
+                            <input id="newResponse" name="response" size="80">
+                            <button id="addResp">Add Response</button>
+                        </form>
+                    <br>
+                </div>
             </div>
         </div>
     </body>
