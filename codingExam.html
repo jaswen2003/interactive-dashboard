@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Link the CSS style page -->
+    <link rel="stylesheet" href="css/codingExam.css">
+</head>
+<body>
+    <p>Name: Jason Wendel</p>
+    <p>Email: jkwendel@my.waketech.edu</p>
+    <p>Date: 10/16/2026</p>
+
+    <div class="col">
+        <form>
+            <!-- Loan Amount input field -->
+            Enter Loan Amount:
+            <input type="number" id="loanAmt">
+
+            <!-- Loan Term (in years) input field -->
+            Enter Loan Term in Years (15 or 30):
+            <input type="number" id="termYrs">
+
+            <!-- Calculate button field -->
+            <button id="button1">Calculate Loan</button>
+        </form>
+        <p id="output"></p>
+        <script>
+            const interestRate = 0.0575;
+
+            const calcBtn = document.getElementById("button1");
+            calcBtn.addEventListener("click", function(event) {
+                // Prevent default
+                event.preventDefault();
+
+                // Receive loan amount and loan term
+                let loanAmount = Number(document.getElementById("loanAmt").value);
+                let termYears = Number(document.getElementById("termYrs").value);
+
+                if (termYears != 15 && termYears != 30) {
+                    window.alert("The Loan Term must be 15 or 30 years!");
+                } else {
+                    // Calculate total interest
+                    monthlyPayment = (((interestRate / 12) * loanAmount) / (1 - Math.pow(1 + (interestRate / 12), (termYears * -12)))).toFixed(2);
+                    console.log(monthlyPayment)
+                    // Calculate total interest amount
+                    totalInterest = (monthlyPayment * termYears * 12) - loanAmount;
+                    console.log(totalInterest);
+                    // Calculate total mortgage amount
+                    totMortgageAmount = loanAmount + totalInterest; 
+                    console.log(totMortgageAmount);
+                    
+                    let termInfo = "Mortgage Term (in years): " + termYears;
+                    let rateInfo = "Mortgage Interest Rate: " + interestRate;
+                    let interestInfo = "Total Interest: $" + totalInterest.toFixed(2);
+                    let mortgageAmtInfo = "Mortgage Amount: $" + totMortgageAmount.toFixed(2);
+                    
+                    
+                    let output = termInfo + "<br>" + rateInfo + "<br>" + interestInfo + "<br>" + mortgageAmtInfo + "<br>";
+                    console.log(output);
+                    document.getElementById("output").innerHTML = output;
+
+                    // Calculate monthly loan amount
+                    let monthlyBalance = totMortgageAmount - (monthlyPayment);
+
+                    for (let i = 0; i <= termYears * 12; i++) {
+                        // Check if balance is 0 and exit loop
+                        if (monthlyBalance <= 0) {
+                            const endOutput = "This is the Ending Amortization Calculator...";
+                            document.getElementById("output").innerHTML += "<br>" + endOutput;
+                            break;
+                        }
+
+                        // Create outputs
+                        let paymentOutput = "Monthly Mortgage Payment: $" + monthlyPayment;
+                        let loanBalance = "Mortgage Loan Balance (after month " + i + "): $" + monthlyBalance.toFixed(2);
+                        let monthlyOutput = "<br>" + paymentOutput + "<br>" + loanBalance + "<br>";
+
+                        // Update output
+                        document.getElementById("output").innerHTML += monthlyOutput;
+
+                        // Re-calculate monthly loan amount
+                        monthlyBalance -= monthlyPayment;
+                    }
+                }             
+            })
+        </script>
+    </div>
+
+</body>
+</html>
