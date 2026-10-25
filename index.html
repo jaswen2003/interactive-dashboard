@@ -18,6 +18,7 @@
         <script>
             document.write('<p class="centered">This dashboard demonstrates how JavaScript can be used to create interactive websites.</p>')
         </script>
+        <a href="codingExam.html" class="block-link">Coding Exam Page!</a>
         <!-- The <noscript> is for web browsers with JavaScript rendering disabled. -->
         <noscript>
             Unfortunately, your web browser does not support JavaScript.
@@ -25,10 +26,9 @@
         <br>
         <br>
         <div class="container">
-            <a href="codingExam.html">Coding Exam Page!</a>
             <div class="row">
                 <!-- Dashboard Content -->
-                 <div class="col" id="weekly-tasks">
+                <div class="col" id="weekly-tasks">
                     <!-- Insert script for task form -->
                     <script src="js/task-manager.js" defer></script>
                     <h2 class="heading">Weekly Goal Calculator</h2>
@@ -61,15 +61,31 @@
                             <label>Enter task:</label>
                             <!-- Input element for task -->
                             <input type="text" id="task-name">
+                            <div class="align-input">
+                                <div>
+                                    <!-- Selection list for priority -->
+                                    <label>Priority:</label>
+                                    <select id="priority">
+                                        <option value="High">High</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Low">Low</option>
+                                    </select>
+                                </div>
+                                <div class="align-check">
+                                    <!-- Selection list for priority -->
+                                    <label for="important">Important: </label>
+                                    <input type="checkbox" id="important" style="margin: 2px 0 0 0;">
+                                </div>
+                            </div>
+                            <br>
+                            <!-- Button element to submit the task -->
+                            <button id="add-task">Add Task</button>
                         </form>
-                        <!-- Button element to submit the task -->
-                        <button id="add-task">Add Task</button>
                     </div>
                     <!-- Button element to clear tasks -->
-                    <!-- Note: I decided to add this for fun -->
                     <button id="clear-tasks">Clear Tasks</button>
-                 </div>
-                 <div class="col" id="metric-converter">
+                </div>
+                <div class="col" id="metric-converter">
                     <!-- Insert script for converter -->
                     <script src="js/metric-converter.js" defer></script>
                     <h2 class="heading">Metric Conversion Tool</h2>
@@ -97,8 +113,8 @@
                     </form>
                     <!-- Paragraph element for function output -->
                     <p id="conversion"></p>
-                 </div>
-                 <div class="col" id="magic-eight-ball">
+                </div>
+                <div class="col" id="magic-eight-ball">
                     <script src="js/magic-eight-ball.js" defer></script>﻿
                     <link rel="stylesheet" href="css/magic-eight-ball.css">
                     <h2 class="heading">Magic Eight Ball</h2>

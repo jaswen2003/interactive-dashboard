@@ -6,6 +6,26 @@ h1, h2 {
     text-align: center;
 }
 
+.block-link {
+    display: block;
+    text-align: center;
+}
+
+.align-input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.align-check{
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
 body {
     background-color: powderblue;
     font-family: Garamond, Helvetica, Georgia;
@@ -29,4 +49,16 @@ button {
     margin: auto;
     margin-top: 15px;
     padding: 5px;
+}
+
+#user-tasks li {
+    text-align: left;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#user-tasks li .task-checkbox {
+    display: inline-block;
+    width: auto;
+    margin: 1px 5px 0 0;
+    vertical-align: middle;
 }
