@@ -1,0 +1,35 @@
+h3 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.display {
+    text-align: center;
+    background-color: antiquewhite;
+    max-width: 500px;
+    padding: 25px;
+    margin: 20px;
+}
+
+#clock-face, #calendar-date {
+    font-family: monospace;
+    color: white;
+    background-color: #28282B;
+    font-weight: bold;
+    text-wrap: wrap;
+    height: 75px;
+    width: 175px;
+    line-height: 75px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#calendar-date {
+    font-size: 18px;
+    margin-top: -50px;
+    font-style: italic;
+}
+
+#clock-face {
+    font-size: 20px;
+}
